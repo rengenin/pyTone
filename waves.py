@@ -68,9 +68,6 @@ class saw_tooth:
 		self.H = self.y_t
 		return self.y_t
 
-def __init__(self,*waves):
-	self.waves = waves
-
 def wave_add(*waves):
 #Sums input arrays seperated by commas in input
 	composite = sum(waves)
