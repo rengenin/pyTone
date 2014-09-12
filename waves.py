@@ -68,27 +68,26 @@ class saw_tooth:
 		self.H = self.y_t
 		return self.y_t
 
-class wave_math:
-	def __init__(self,*waves):
-		self.waves = waves
+def __init__(self,*waves):
+	self.waves = waves
 
-	def wave_add(self):
-	#Sums input arrays seperated by commas in input
-		self.composite = sum(self.waves)
-		return self.composite
+def wave_add(*waves):
+#Sums input arrays seperated by commas in input
+	composite = sum(waves)
+	return composite
 
-	def wave_diff(self):
-	#Takes the difference of arrays seperated by commas in input
-	#order subtraction given by order of input arrays
-		self.lst = [] #Creates list out of inputs
-		self.sub = [] #1 element length list which holds subtracted values
-		for self.wavs in self.waves:
-		#Fill out list of input arrays (each element is an array)
-			self.lst.append(self.wavs)
-		self.sub.insert(0,self.lst[0])
-		#Set first value equal to first input
-		for n in xrange(1, len(self.lst)):
-			#Subtract subsequent arrays and replace first element in 
-			#sub with difference of subtraction
-			self.sub.insert(0, self.sub[0] - self.lst[n])
-		return self.sub[0] #return difference result
+def wave_diff(*waves):
+#Takes the difference of arrays seperated by commas in input
+#order subtraction given by order of input arrays
+	lst = [] #Creates list out of inputs
+	sub = [] #1 element length list which holds subtracted values
+	for wavs in waves:
+	#Fill out list of input arrays (each element is an array)
+		lst.append(wavs)
+	sub.insert(0,lst[0])
+	#Set first value equal to first input
+	for n in xrange(1, len(lst)):
+		#Subtract subsequent arrays and replace first element in 
+		#sub with difference of subtraction
+		sub.insert(0, sub[0] - lst[n])
+	return sub[0] #return difference result

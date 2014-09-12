@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io.wavfile import write
-from waves import sinusoid, square_wave, saw_tooth, wave_math
+from waves2 import sinusoid, square_wave, saw_tooth, wave_add, wave_diff
 
 #Function to save waves as wav format audio file at 441.1 kHz sample rate
 def wave_save(name, array):
@@ -22,11 +22,10 @@ def main():
 		wave3 = saw_tooth(2.,2.,True)
 		saw = wave3.saw_wave()
 
-		comp1 = wave_math(sin,saw,square)
 		#Add waves together
-		add = comp1.wave_add()
+		add = wave_add(sin,saw,square)
 		#Subtract waves
-		sub = comp1.wave_diff()
+		sub = wave_diff(sin,saw,square)
 
 		plt.plot(sin)
 		plt.plot(square)
