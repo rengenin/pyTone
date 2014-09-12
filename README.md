@@ -1,0 +1,1 @@
+pyTone is my meanderings with DSP, period functions and in the (hopefully) near future timbres. Right now this package can easily generate sounds which are more annoying than your alarm clock. I hope in the future it will create noises of a more musical variety.
